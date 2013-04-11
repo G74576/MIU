@@ -1,7 +1,7 @@
 /* 	
 	Kevin O'Toole
-	VFW 1303
-	Project 4
+	MIU 1304
+	Project 1
 */
 
 /*
@@ -21,7 +21,7 @@ html {
 h1{
 	display: block;
 	padding: 0px 0px 0px 0px;
-	margin: 10px 0px 0px 0px;
+	margin: 10px 10px 0px 0px;
 	text-align: center;
 	/*font-family: Harrington, "Times New Roman", Arial;
 	font-weight: bold;
@@ -31,12 +31,12 @@ h1{
 /* 
 	index.html css
 */ 
-#compilation{
+/*#compilation{
 	padding: 0px;
 	margin: 0px;
 	text-align: center;
 	font-family: "Times New Roman", Times, Arial;
-}
+}*/
 
 #click{
 	text-align: center;
@@ -45,6 +45,19 @@ h1{
 
 #button{
 	text-align: center;
+}
+
+#cta{
+	height: 92px;
+	margin: 0px;
+	padding: 0px;
+	background: url(../images/cta.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#addbtn{
+	padding: 62px 140px 0px 0px;
 }
 
 /*

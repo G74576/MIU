@@ -1,6 +1,6 @@
 // Kevin O'Toole
-// VFW 1303
-// Project 4
+// MIU 1304
+// Project 1
 
 // Wait until the DOM is ready.
 window.addEventListener("DOMContentLoaded", function(){
