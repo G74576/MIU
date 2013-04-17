@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		selectLiRecipeType.appendChild(makeRecipeTypeSelect);
 	}
-	
+		
 	//Find value of selected radio button.
 	function getSelectedRadio(){
 		var relatedRadios = document.forms[0].relative;
@@ -366,4 +366,5 @@ window.addEventListener("DOMContentLoaded", function(){
 	var saveNewRecipe = id("saveRecipe");
 	saveNewRecipe.addEventListener("click", validate);
 	//saveNewRecipe.addEventListener("click", refreshWindow);
+
 });

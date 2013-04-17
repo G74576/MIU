@@ -1,0 +1,35 @@
+/* 	
+	Kevin O'Toole
+	MIU 1304
+	Project 2
+*/
+
+#homepage, #infopage, #newsStream, #breakfastpage, #lunchpage,
+#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchPage{
+	background: #6fbfe9;
+}
+
+h1{
+	display: block;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+#cta{
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+	background: url(../images/cta.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#addbtn{
+	margin: 65px 100px 0px 40px;
+}
+
+#searchpage{
+	margin: 0px 10px 0px 10px;
+}
