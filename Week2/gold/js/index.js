@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 
 	// Create select field element and populate with options (optionGroup)
-	function recipeCategory(){
+	/*function recipeCategory(){
 		var recipeFormTag = document.getElementsByTagName("form"); //formTag is an array of all the form tags
 		var selectLiRecipeType = id("selectType");
 		var makeRecipeTypeSelect = document.createElement("select");
@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeRecipeTypeSelect.appendChild(makeRecipeTypeOption);
 		}
 		selectLiRecipeType.appendChild(makeRecipeTypeSelect);
-	}
+	}*/
 		
 	//Find value of selected radio button.
 	function getSelectedRadio(){
@@ -356,15 +356,65 @@ window.addEventListener("DOMContentLoaded", function(){
 	var	relatedValue;
 	var	whenCookedValue = "No specific time when you would cook this.";
 	var errMsg = id("errors");
-	recipeCategory();
+//recipeCategory();
 
 	//Set Link & Submit Click Events
-	var displayRecipes = id("display");
-	displayRecipes.addEventListener("click", getRecipes);
-	var clearRecipes =id("clear");
-	clearRecipes.addEventListener("click", deleteLocalRecipes);
-	var saveNewRecipe = id("saveRecipe");
-	saveNewRecipe.addEventListener("click", validate);
+	//var displayRecipes = id("display");
+	//displayRecipes.addEventListener("click", getRecipes);
+	//var clearRecipes =id("clear");
+	//clearRecipes.addEventListener("click", deleteLocalRecipes);
+	//var saveNewRecipe = id("saveRecipe");
+	//saveNewRecipe.addEventListener("click", validate);
 	//saveNewRecipe.addEventListener("click", refreshWindow);
 	
+	var search = id("searchbtn");
+	search.addEventListener("click", getSearch);
+	
+	function getSearch(){
+		var category = id("types").value;
+		var term = id("searchTerm").value;
+		
+		//search by category only
+		if(category != " --Choose A Type Of Recipe-- "){
+			for(var i=0, len=localStorage.length; i<len; i++){ 			// Creates loop of local storage
+				var key = localStorage.key(i); 							// Sets the key value from local storage
+				var value = localStorage.getItem(key); 					// Sets the value from the key from the local storage
+				var item = JSON.parse(value); 						    //Convert the string from local storage value back to an object by using JSON.parse
+				if(category === item.group[1]){
+					for(n in item){
+						console.log(item[n][0]+": "+item[n][1]);
+					}
+				}
+			}
+		}
+		
+		//search by term only
+		if(term != ""){
+		var myUlTag = document.createElement("ul");
+		var myDiv = document.getElementById("searchContent");
+		myDiv.appendChild(myUlTag);	
+			for(var i=0, len=localStorage.length; i<len; i++){ 			// Creates loop of local storage
+				//var myLi = document.createElement("li");
+				//myUlTag.appendChild(myLi);
+				var key = localStorage.key(i); 							// Sets the key value from local storage
+				var value = localStorage.getItem(key); 					// Sets the value from the key from the local storage
+				var item = JSON.parse(value); 						    //Convert the string from local storage value back to an object by using JSON.parse
+				//var myNewUl = document.createElement("ul");
+				//myLi.appendChild(myNewUl);
+				//getImage(item.group[1], myUlTag);
+				for(n in item){
+					if(term === item[n][1]){
+						for(q in item){
+							var myNewLi = document.createElement("li");
+							myUlTag.appendChild(myNewLi);
+							var optNewSubText = item[q][0] + " " + item[q][1]; // 
+							myNewLi.innerHTML = optNewSubText;				
+							//console.log(item[q][0]+": "+item[q][1]);
+						}
+					}
+				}
+			}
+		}
+	}
+
 });

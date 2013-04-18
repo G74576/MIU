@@ -4,19 +4,22 @@
 	Project 2
 */
 
-#homepage, #infopage, #newsStream, #breakfastpage, #lunchpage,
-#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchPage{
+#homepage, #recipesPage, #infopage, #author, #newsStream, #breakfastpage, #lunchpage,
+#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchRecipePage{
 	background: #6fbfe9;
 }
 
-h1{
-	display: block;
+h1 {
 	text-align: center;
 	padding: 0px;
 	margin: 0px;
-	
 }
 
+#clover{
+	float: right;
+}
+
+/* -- Home Page CSS -- */
 #cta{
 	height: 100px;
 	margin: 0px;
@@ -30,6 +33,62 @@ h1{
 	margin: 65px 100px 0px 40px;
 }
 
+
 #searchpage{
+	text-shadow: none;
 	margin: 0px 10px 0px 10px;
+}
+
+#button{
+	text-align: center;
+	margin: 5px;
+}
+
+/* -- Recipe Page CSS -- */
+#recipehead{
+	text-shadow: none;
+	text-align: center;
+	padding: 0px;
+	margin: 0px 0px 10px 0px;
+}
+
+#recCont{
+	text-align: center;
+}
+
+/* -- Author Page CSS -- */
+#authHead{
+	text-shadow: none;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+#authInfo{
+	color: solid black;
+	font-size: 16px;
+	text-shadow: none;
+}
+
+#kevinimg {
+	float: right;
+	padding-left: 1em;
+}
+
+/* -- News Stream Page CSS -- */
+#newshead{
+	text-shadow: none;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+#error{
+	float: left;
+}
+
+#breakfastContent, #lunchContent, #dinnerContent,
+#appetizerContent, #dessertContent, #drinkContent{
+	text-shadow: none;
+	text-align: center;
 }
