@@ -41,9 +41,9 @@
 				<ul data-role="listview">
 					<!--<li data-role="list-divider">Search recipes by:</li>-->
 					<input type="search" id="searchTerm" data-mini="true" value="" placeholder="Search recipes by..."/>
-					<h3><a href="errorpage.html" data-role="button" data-mini="true" id="searchbtn">Search</a></h3>
+					<h3><a href="errorpage.html" data-ajax="false" data-role="button" data-mini="true" id="searchbtn">Search</a></h3>
 					<label for="browsecat">Or browse by category:</label>
-					<a href="errorpage.html"><select name="browsecategory" id="types" data-mini="true">
+					<a href="errorpage.html" data-ajax="false"><select name="browsecategory" id="types" data-mini="true">
 						<option value="choose"> --Choose A Type Of Recipe-- </option>
 						<option value="break">Breakfast</option>
 						<option value="lun">Lunch</option>
@@ -74,6 +74,7 @@
 				<h1>Browse Recipes</h1>
 			</div>
 			<div data-role="content">
+				<h3 id="recipehead">Browse through our delicious<br />family recipes by category</h3>
 				<div class="ui-grid-b" id="recCont">
 					<a href="#breakfastpage"><div class="ui-block-a"><div class="ui-bar ui-bar-c"><img src="images/Breakfast.png" />Breakfast</div></div></a>
 					<a href="#lunchpage"><div class="ui-block-b"><div class="ui-bar ui-bar-c"><img src="images/Lunch.png" />Lunch</div></div></a>
@@ -101,6 +102,7 @@
 				<h1>Site Information</h1>
 			</div>
 			<div data-role="content">
+				<h3 id="infoHead">For information about the author of this site or any other information please visit one of the links below</h3>
 					<a href="#author" data-role="button">Author Info</a>
 					<a href="../gold/index.html" data-ajax="false" data-role="button">Gold Page</a>
 					<a href="https://github.com/G74576/MIU" target="_blank" data-ajax="false" data-role="button">GitHub Repository</a>

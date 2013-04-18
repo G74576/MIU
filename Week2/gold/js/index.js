@@ -371,11 +371,11 @@ window.addEventListener("DOMContentLoaded", function(){
 	search.addEventListener("click", getSearch);
 	
 	function getSearch(){
-		var category = id("types").value;
+		//var category = id("types").value;
 		var term = id("searchTerm").value;
 		
 		//search by category only
-		if(category != " --Choose A Type Of Recipe-- "){
+		/*if(category != " --Choose A Type Of Recipe-- "){
 			for(var i=0, len=localStorage.length; i<len; i++){ 			// Creates loop of local storage
 				var key = localStorage.key(i); 							// Sets the key value from local storage
 				var value = localStorage.getItem(key); 					// Sets the value from the key from the local storage
@@ -386,7 +386,7 @@ window.addEventListener("DOMContentLoaded", function(){
 					}
 				}
 			}
-		}
+		}*/
 		
 		//search by term only
 		if(term != ""){
