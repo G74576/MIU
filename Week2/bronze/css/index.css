@@ -4,17 +4,23 @@
 	Project 2
 */
 
-#homepage, #infopage, #newsStream, #breakfastpage, #lunchpage,
-#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchPage{
+#homepage, #recipesPage, #infopage, #author, #newsStream, #breakfastpage, #lunchpage,
+#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchRecipePage{
 	background: #6fbfe9;
 }
 
-h1{
-	display: block;
+h1 {
 	text-align: center;
 	padding: 0px;
 	margin: 0px;
-	
+}
+
+#clover{
+	float: right;
+}
+
+#recCont{
+	text-align: center;
 }
 
 #cta{
@@ -31,5 +37,23 @@ h1{
 }
 
 #searchpage{
+	text-shadow: none;
 	margin: 0px 10px 0px 10px;
+}
+
+#authHead{
+	font-family: "Times New Roman", Times, Arial;
+	text-shadow: none;
+}
+
+#authInfo{
+	font-family: "Times New Roman", Times, Arial;
+	color: solid black;
+	font-size: 18px;
+	text-shadow: none;
+}
+
+#kevinimg {
+	float: right;
+	padding-left: 1em;
 }
