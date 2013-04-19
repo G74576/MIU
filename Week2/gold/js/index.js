@@ -406,6 +406,7 @@ window.addEventListener("DOMContentLoaded", function(){
 					if(term === item[n][1]){
 						for(q in item){
 							var myNewLi = document.createElement("li");
+							myNewLi.setAttribute("id", "searchLI");
 							myUlTag.appendChild(myNewLi);
 							var optNewSubText = item[q][0] + " " + item[q][1]; // 
 							myNewLi.innerHTML = optNewSubText;				

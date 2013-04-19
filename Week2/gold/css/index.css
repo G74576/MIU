@@ -49,6 +49,10 @@ h1 {
 	text-align: center;
 }
 
+#searchLI{
+	text-align: left;
+}
+
 /* -- Recipe Page CSS -- */
 #recipehead{
 	text-shadow: none;
