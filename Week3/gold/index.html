@@ -34,7 +34,7 @@
 			</div>
 			
 			<div data-role="content" id="cta">
-				<a href="additem.html" data-ajax="false" data-role="button" data-mini="true" data-inline="true" data-theme="b" id="addbtn">Add A Recipe</a>
+				<a href="#addItem" data-role="button" data-mini="true" data-inline="true" data-theme="b" id="addbtn">Add A Recipe</a>
 			</div>
 			
 			<div data-role="content" id="searchpage">
@@ -457,6 +457,135 @@
 				</div>
 			</div>
 		</div><!-- End Drink Page -->
+		
+		<!-- Add Item Page -->
+		<div data-role="page" id="addItem" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Add A Recipe</h1>
+			</div>
+			
+			<div data-role="content" id="formContent">
+				<form action="" id="addForm">
+					<fieldset id="contactFieldset">
+						<legend>Your Information</legend>
+						<span id="required">*Fields are required.</span>
+							
+							<div data-role="fieldcontain">
+								<label for="fname">*First Name:</label>
+								<input type="text" name="fname" id="fname" placeholder="John" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="lname">*Last Name:</label>
+								<input type="text" name="lname" id="lname" placeholder="Doe" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="todaysDate"> Todays Date:</label>
+								<input type="date" name="todaysDate" id="todaysDate" placeholder="MM/DD/YYY" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup" data-type="vertical">
+									<legend>Are you part of the family?</legend>
+										<input type="radio" value="Yes" id="yes" name="relative" checked="checked" data-mini="true" />
+										<label for="yes">Yes</label>
+										<input type="radio" value="No" id="no" name="relative" data-mini="true" />
+										<label for="no">No</label>
+								</fieldset>
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="email">*Email:</label>
+								<input type="email" id="email" name="email" placeholder="example@email.com" data-mini="true" />
+							</div>
+					</fieldset>
+					<fieldset id="recipeFieldset">
+						<legend>Your Recipe Information</legend>
+						
+							<div data-role="fieldcontain">
+								<label for="recName">*Recipe Name</label>
+								<input type="text" name="recName" id="recName" placeholder="Name of your recipe" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="type">*What type of recipe will this be?</label>
+								<select name="type" id="type" data-mini="true" data-native-menu="false">
+									<option value="choose"> --Choose A Type Of Recipe-- </option>
+									<option value="breakfastType">Breakfast</option>
+									<option value="lunchType">Lunch</option>
+									<option value="dinnerType">Dinner</option>
+									<option value="appetizerType">Appetizer</option>
+									<option value="dessertType">Dessert</option>
+									<option value="drinkType">Drink</option>
+								</select>
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="range">Select the level of difficulty:</label>
+								<input type="range" name="range" id="range" value="5" min="1" max="10" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup" data-type="vertical">
+									<legend>When do you make this?<br/>
+									<span id="whenSmall">(Check all that apply)</span></legend>
+										<input type="checkbox" value="Valentines" id="valentines" name="when" data-mini="true" />
+										<label for="valentines">Valentines</label>
+										<input type="checkbox" value="Easter" id="easter" name="when" data-mini="true" />
+										<label for="easter">Easter</label>
+										<input type="checkbox" value="Halloween" id="halloween" name="when" data-mini="true" />
+										<label for="halloween">Halloween</label>
+										<input type="checkbox" value="Thanksgiving" id="thanksgiving" name="when" data-mini="true" />
+										<label for="thanksgiving">Thanksgiving</label>
+										<input type="checkbox" value="Christmas" id="christmas" name="when" data-mini="true" />
+										<label for="christmas">Christmas</label>
+										<input type="checkbox" value="Birthdays" id="birthdays" name="when" data-mini="true" />
+										<label for="birthdays">Birthdays</label>
+										<input type="checkbox" value="Other" id="other" name="when" data-mini="true" />
+										<label for="other">Other Times - Please Specify:</label>
+										<input type="text" id="specify" placeholder="Specify when you cook this" data-mini="true" /> 
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="time">Cooking Time:</label>
+								<input type="text" name="time" id="time" placeholder="1 Hour or 15 Minutes etc..." data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="temperature">Cooking Temperature:</label>
+								<input type="text" name="temperature" id="temperature" placeholder="350 degrees or Microwave etc..." data-mini="true" />
+							</dvi>
+							
+							<div data-role="fieldcontain">
+								<label for="ingredients">*Ingredients:</label>
+								<textarea name="ingredients" id="ingredients" placeholder="List all your ingredients" data-mini="true"></textarea>
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="directions">*Cooking Directions:</label>
+								<textarea name="directions" id="directions" placeholder="Step by step cooking instructions." data-mini="true"></textarea>
+							</div>
+					</fieldset>
+					
+					<div data-role="fieldcontain">
+						<input type="submit" value="Submit Your Recipe!" id="saveRecipe" data-theme="b" /><br/>
+						<input type="reset" value="Clear the Form" id="clearForm" data-mini="true" />
+					</div>
+				</form>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#" data-icon="bars" data-theme="b">Display Recipes</a></li>
+						<li><a href="#" data-icon="delete" data-theme="b">Clear Recipes</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div><!-- End Add Item Page -->
 		
 		<!-- JS -->
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

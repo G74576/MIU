@@ -5,7 +5,7 @@
 */
 
 #homepage, #recipesPage, #infopage, #author, #newsStream, #breakfastpage, #lunchpage,
-#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchRecipePage{
+#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchRecipePage, #addItem{
 	background: #6fbfe9;
 }
 
@@ -100,4 +100,9 @@ h1 {
 #appetizerContent, #dessertContent, #drinkContent{
 	text-shadow: none;
 	text-align: center;
+}
+
+/* -- Add Item -- */
+#addItem{
+	text-shadow: none;
 }
