@@ -250,6 +250,7 @@ var json = {
 		"todaysDate": ["Date Added:", "10/20/12"],
 		"family": ["Related:", "Yes"],
 		"email": ["Email:", "greg@greg.com"],
+		"recname": ["Recipe Name:", "Cookie"],
 		"group": ["Type of Recipe:", "Lunch"],
 		"range": ["Difficulty Level:", "2"],
 		"whenCooked": ["When You Cook This:", "Birthdays"],
