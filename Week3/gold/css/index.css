@@ -1,11 +1,11 @@
 /* 	
 	Kevin O'Toole
 	MIU 1304
-	Project 2
+	Project 3
 */
 
 #homepage, #recipesPage, #infopage, #author, #newsStream, #breakfastpage, #lunchpage,
-#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchRecipePage, #addItem{
+#dinnerpage, #appetizerpage, #dessertpage, #drinkpage, #searchRecipePage, #addItem, #dispRec{
 	background: #6fbfe9;
 }
 
@@ -103,7 +103,7 @@ h1 {
 }
 
 /* -- Add Item -- */
-#addItem{
+#addItem, #dispRec{
 	text-shadow: none;
 }
 
@@ -116,3 +116,26 @@ label.error{
 	margin: 10px 0px;
 	color: red;
 }
+
+#infoLegend, #recLegend{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+span#required, span#emailinput, span#inginput, span#dirinput{
+	font-size: 12px;
+}
+
+ul#errors{
+	color: red;
+	font-size: 14px;
+	text-shadow: none;
+}
+
+ul#newSubList li{
+	list-style: none;
+}
+
+
+
+

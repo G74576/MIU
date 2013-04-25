@@ -1,6 +1,6 @@
 // Kevin O'Toole
 // MIU 1304
-// Project 2
+// Project 3
 // JSON Object
 
 var json = {

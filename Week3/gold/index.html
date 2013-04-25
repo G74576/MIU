@@ -104,7 +104,7 @@
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
 						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
 						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
 						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
 					</ul>
@@ -330,7 +330,7 @@
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
 						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
 						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
 						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
 					</ul>
@@ -467,23 +467,23 @@
 			<div data-role="content" id="formContent">
 				<form action="" id="addForm">
 					<fieldset id="contactFieldset">
-						<legend>Your Information</legend>
+						<legend id="infoLegend">Your Information</legend>
 						<span id="required">*Fields are required.</span>
-						<ul id="errMsgs"></ul>
+						<ul id="errors"></ul>
 							
 							<div data-role="fieldcontain">
 								<label for="fname">*First Name:</label>
-								<input type="text" name="fname" id="fname" placeholder="John" data-mini="true"  />
+								<input type="text" data-clear-btn="true" name="fname" id="fname" placeholder="John" data-mini="true"  />
 							</div>
 							
 							<div data-role="fieldcontain">
 								<label for="lname">*Last Name:</label>
-								<input type="text" name="lname" id="lname" placeholder="Doe" data-mini="true" />
+								<input type="text" data-clear-btn="true" name="lname" id="lname" placeholder="Doe" data-mini="true" />
 							</div>
 							
 							<div data-role="fieldcontain">
 								<label for="todaysDate"> Todays Date:</label>
-								<input type="date" name="todaysDate" id="todaysDate" placeholder="MM/DD/YYY" data-mini="true" />
+								<input type="date" data-clear-btn="true" name="todaysDate" id="todaysDate" placeholder="MM/DD/YYY" data-mini="true" />
 							</div>
 							
 							<div data-role="fieldcontain">
@@ -498,19 +498,20 @@
 							
 							<div data-role="fieldcontain">
 								<label for="email">*Email:</label>
-								<input type="email" id="email" name="email" placeholder="example@email.com" data-mini="true" />
+								<input type="email" data-clear-btn="true" id="email" name="email" placeholder="example@email.com" data-mini="true" />
+								<span id="emailinput">Enter a valid Email: "example@email.com"</span>
 							</div>
 					</fieldset>
 					<fieldset id="recipeFieldset">
-						<legend>Your Recipe Information</legend>
+						<legend id="recLegend">Your Recipe Information</legend>
 						
 							<div data-role="fieldcontain">
 								<label for="recName">*Recipe Name</label>
-								<input type="text" name="recName" id="recName" placeholder="Name of your recipe" data-mini="true"  />
+								<input type="text" data-clear-btn="true" name="recName" id="recName" placeholder="What do you call this recipe?" data-mini="true"  />
 							</div>
 							
 							<div data-role="fieldcontain">
-								<label for="type">*What type of recipe will this be?</label>
+								<label for="type">What type of recipe will this be?</label>
 								<select name="type" id="type" data-mini="true" data-native-menu="false"  >
 									<option value="choose"> --Choose A Type Of Recipe-- </option>
 									<option value="Breakfast">Breakfast</option>
@@ -550,22 +551,24 @@
 							
 							<div data-role="fieldcontain">
 								<label for="time">Cooking Time:</label>
-								<input type="text" name="time" id="time" placeholder="1 Hour or 15 Minutes etc..." data-mini="true" />
+								<input type="text" data-clear-btn="true" name="time" id="time" placeholder="1 Hour or 15 Minutes etc..." data-mini="true" />
 							</div>
 							
 							<div data-role="fieldcontain">
 								<label for="temperature">Cooking Temperature:</label>
-								<input type="text" name="temperature" id="temperature" placeholder="350 degrees or Microwave etc..." data-mini="true" />
+								<input type="text" data-clear-btn="true" name="temperature" id="temperature" placeholder="350 degrees or Microwave etc..." data-mini="true" />
 							</dvi>
 							
 							<div data-role="fieldcontain">
 								<label for="ingredients">*Ingredients:</label>
-								<textarea name="ingredients" id="ingredients" placeholder="List all your ingredients" data-mini="true" ></textarea>
+								<textarea name="ingredients" data-clear-btn="true" id="ingredients" placeholder="List all your ingredients" data-mini="true" ></textarea>
+								<span id="inginput">List of all the ingredients required for your recipe.<span>
 							</div>
 							
 							<div data-role="fieldcontain">
 								<label for="directions">*Cooking Directions:</label>
-								<textarea name="directions" id="directions" placeholder="Step by step cooking instructions." data-mini="true" ></textarea>
+								<textarea name="directions" data-clear-btn="true" id="directions" placeholder="Step by step cooking instructions." data-mini="true" ></textarea>
+								<span id="dirinput">Step by step cooking instructions so that others can be sure how to cook this recipe.<span>
 							</div>
 					</fieldset>
 					
@@ -593,15 +596,30 @@
 		
 		<!-- Display All Recipes Page -->
 		<div data-role="page" id="dispRec" data-add-back-btn="true">
+			
 			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
 				<h1>All Recipes</h1>
 			</div>
-			<div data-role="content" id="dispRecCont">
+			
+			<div data-role="content" >
+				<ul id="dispRecCont" data-role="list-view" data-filter="true" data-filter-placeholder="Search recipes..." >
+				</ul>
 			</div>
-		
+			
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div><!-- End Display Page -->
 		
 		<!-- Error Dialog Page -->
-		<div data-role="dialog" id="errors">
+		<div data-role="dialog" id="errorsDialog">
 			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
 				<h1>Missing Fields</h1>
 			</div>
@@ -618,6 +636,6 @@
 		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
 		<script src="js/libs/jquery.validate.min.js"></script>
 		<script src="js/json.js" type="text/javascript"></script>
-		<script src="js/index.js" type="text/javascript"></script>
+		<script src="js/sample-main.js" type="text/javascript"></script>
 	</body>
 </html>

@@ -39,12 +39,12 @@
 					<span id="required">* fields are required.</span>
 					<ul id="errors"></ul>
 					<ul id="contactInfo">
-						<li><label for="fname">*First Name&#58;</label><input type="text" id="fname" /></li>
-						<li><label for="lname">*Last Name&#58;</label><input type="text" id="lname" /></li>
-						<li><label for="todaysDate">Todays Date&#58;</label><input type="date" id="todaysDate" /></li>
+						<li><label for="fname">*First Name&#58;</label><input type="text" id="fname" placeholder="Enter First Name" /></li>
+						<li><label for="lname">*Last Name&#58;</label><input type="text" id="lname" placeholder="Enter Last Name"/></li>
+						<li><label for="todaysDate">Todays Date&#58;</label><input type="date" id="todaysDate" placeholder="MM/DD/YYY"/></li>
 						<li>Are you part of the family&#63;
 							<ul class="family">
-								<input type="radio" value="Yes" id="yes" name="relative"/><label for="yes">Yes</label>
+								<input type="radio" value="Yes" id="yes" name="relative" checked="checked" /><label for="yes">Yes</label>
 								<input type="radio" value="No" id="no" name="relative" /><label for="no">No</label>
 							</ul>
 						</li>
@@ -71,17 +71,18 @@
 								<input type="checkbox" value="Other" id="other" name="when" /><label for="other">Other</label>
 									<input type="text" id="specify" />
 							</ul>
-						<li><label for="time">Cooking Time&#58;</label><input type="text" id="time" /></li>
-						<li><label for="temperature">Temperature&#58;</label><input type="text" id="temperature" /></li>
+						<li><label for="time">Cooking Time&#58;</label><input type="text" id="time" placeholder="1 Hour or 15 mins etc..."/></li>
+						<li><label for="temperature">Temperature&#58;</label><input type="text" id="temperature" placeholder="350 degrees or Microwave etc..."/></li>
 						<li><label for="ingredients">*Ingredients&#58;</label><br />
-							<textarea id="ingredients"></textarea>
+							<textarea id="ingredients" placeholder="Please enter recipe ingredients here"></textarea>
 						<li><label for="directions">*Cooking Directions&#58;</label><br />
-							<textarea id="directions"></textarea>
+							<textarea id="directions" placeholder="Please enter cooking directions here"></textarea>
 						</li>
 						<input type="hidden" value="true" />
 					</ul>
 			</fieldset>
 				<div><input type="submit" value="Submit Your Recipe!" id ="saveRecipe"/></div>
+				<div><input type="reset" value="Clear the Form" id="clearForm"/></div>
 		</form>
 		<footer>	
 			<nav>
