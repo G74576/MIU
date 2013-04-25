@@ -106,3 +106,13 @@ h1 {
 #addItem{
 	text-shadow: none;
 }
+
+#errorsLink{
+	display: none;
+}
+
+label.error{
+	display: block;
+	margin: 10px 0px;
+	color: red;
+}
