@@ -1,0 +1,666 @@
+<!doctype html>
+<!-- Kevin O'Toole -->
+<!-- MIU 1304 -->
+<!-- Project 3 -->
+
+<html>
+	<!-- Document Head inclues what charactores the site will use, short description, key words for search engines
+	information on how mobile devices will use the site, and page title-->
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="This is a compilation of the O'Toole and Leone family recipes." />
+		<meta name="keywords" content="recipes, otoole, leone, italian, irish, german" />
+		<meta name="robots" contents="index follow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device-dpi" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimezed" content="320"/>
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on"/>
+		<title>Our Family Recipe Book</title>
+		<!-- StyleSheets -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />	
+		<!-- JS is normally at the end of the body, except for Modenizer which enables HTML elements and feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	</head>
+	<body>
+		<!-- Home Page -->
+		<div data-role="page" id="homepage">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<header>
+					<h1 id="logo"><a href="index.html"><img alt="Logo" src="images/logo.png" /></a></h1>
+				</header>
+			</div>
+			
+			<div data-role="content" id="cta">
+				<a href="#addItem" data-role="button" data-mini="true" data-inline="true" data-theme="b" id="addbtn">Add A Recipe</a>
+			</div>
+			
+			<div data-role="content" id="searchpage">
+				<ul data-role="listview">
+					<label for="searchTerm">Search recipes by...</label>
+					<input type="search" id="searchTerm" data-mini="true" value="" placeholder="Search recipes by..."/>
+					<h3><a href="#searchRecipePage" data-role="button" data-mini="true" data-theme="b" id="searchbtn">Search</a></h3>
+				</ul>
+			</div>
+			
+			<div id="browse">
+				<ul data-role="listview">
+					<li data-role="list-divider">Or browse recipes by category:</li>
+						<!--<div id="searchpage">
+							<form>
+								<span id="selectType"><label for="browsecat">Or browse by category:</label></span>
+								<select name="browsecategory" id="types" data-mini="true">
+									<option value="choose"> --Choose A Type Of Recipe-- </option>
+									<option value="break">Breakfast</option>
+									<option value="lun">Lunch</option>
+									<option value="din">Dinner</option>
+									<option value="app">Appetizer</option>
+									<option value="des">Dessert</option>
+									<option value="dri">Drink</option>
+								</select>
+							</form>
+						</div>-->
+					<li><a href="#breakfastpage">Breakfast</a></li>
+					<li><a href="#lunchpage">Lunch</a></li>
+					<li><a href="#dinnerpage">Dinner</a></li>
+					<li><a href="#appetizerpage">Appetizer</a></li>
+					<li><a href="#dessertpage">Dessert</a></li>
+					<li><a href="#drinkpage">Drink</a></li>
+				</ul>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div><!-- End Home Page -->
+		
+		<!-- Recipes Page (navbar) -->
+		<div data-role="page" id="recipesPage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b">
+				<h1>Browse Recipes</h1>
+			</div>
+			<div data-role="content">
+				<h3 id="recipehead">Browse through our delicious<br />family recipes by category</h3>
+				<div class="ui-grid-b" id="recCont">
+					<a href="#breakfastpage"><div class="ui-block-a"><div class="ui-bar ui-bar-c"><img src="images/Breakfast.png" /><br />Breakfast</div></div></a>
+					<a href="#lunchpage"><div class="ui-block-b"><div class="ui-bar ui-bar-c"><img src="images/Lunch.png" /><br />Lunch</div></div></a>
+					<a href="#dinnerpage"><div class="ui-block-c"><div class="ui-bar ui-bar-c"><img src="images/Dinner.png" /><br />Dinner</div></div></a>
+					<a href="#appetizerpage"><div class="ui-block-a"><div class="ui-bar ui-bar-c"><img src="images/Appetizer.png" /><br />Appetizer</div></div></a>
+					<a href="#dessertpage"><div class="ui-block-b"><div class="ui-bar ui-bar-c"><img src="images/Dessert.png" /><br />Dessert</div></div></a>
+					<a href="#drinkpage"><div class="ui-block-c"><div class="ui-bar ui-bar-c"><img src="images/Drink.png" /><br />Drink</div></div></a>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Recipes Page -->
+				
+		<!-- Info Page -->
+		<div data-role="page" id="infopage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b">
+				<h1>Site Information</h1>
+			</div>
+			<div data-role="content">
+				<h3 id="infoHead">For information about the author of this site or any other information please visit one of the links below</h3>
+				<a href="#author" data-role="button">Author Info</a>
+				<a href="../bronze/index.html" data-ajax="false" data-role="button">Brozne Page</a>
+				<a href="https://github.com/G74576/MIU" target="_blank" data-ajax="false" data-role="button">GitHub Repository</a>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Info Page -->
+		
+		<!-- Author Page -->
+		<div data-role="page" id="author" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b">
+					<h1>About The Author</h1>
+			</div>
+			<div data-role="content">
+					<h2 id="authHead">Kevin O'Toole</h2>
+					<p id="authInfo"><img src="images/kevinsmall.png" id="kevinimg" alt-text="Kevin USMC"/>
+						I am a NYC transplant currently living in south Florida.
+						I served in the United States Marine Corps for a little over 13 years.
+						Im currently enrolled at Full Sail University's in their Mobile Application Development Bachelors of Science program.
+						<br /><br />
+						Please feel free to contact me via Email:<br />
+						<a href="mailto:kmotoole78@fullsail.edu" id="full">kmotoole78@fullsail.edu</a><br />
+						<a href="mailto:kmotoole78@gmail.com" id="gmail">kmotoole78@gmail.com</a>
+					</p>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- Ende Author Page -->
+			
+		<!-- News Stream -->
+		<div data-role="page" id="newsStream" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>News Stream</h1>
+			</div>
+			<div data-role="content">
+				<h3 id="newshead">View the most current recipe<br />added by category!</h3>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Breakfast</h3>
+						<ul data-role="listview">
+							<li>
+								<img src="images/Breakfast.png" />
+								<p>Frist Name: Kevin<br />
+								Last Name: O'Toole<br />
+								Date Added: 11/12/13<br />
+								Related: Yes<br />
+								Email: kevin@kevin.com<br />
+								Recipe Name: Sweetness<br />
+								Type of Recipe: Breakfast<br />
+								Difficulty: 8<br />
+								When You Cook This: Easter<br />
+								Other Time: BBQ<br />
+								Cooking Time: 1 Hour<br />
+								Cooking Temperature: 350 Degrees<br />
+								Recipe Ingredients: Eggs, Milk, Butter<br />
+								Cooking Directions: Let Cook Slow
+								</P>
+							</li>
+							<li>
+								<img src="images/Breakfast.png" />
+								<p>Frist Name: Keira<br />
+								Last Name: Knight<br />
+								Date Added: 11/23/12<br />
+								Related: No<br />
+								Email: keira@keira.com<br />
+								Recipe Name: Pop<br />
+								Type of Recipe: Breakfast<br />
+								Difficulty: 2<br />
+								When You Cook This: Halloween<br />
+								Other Time: <br />
+								Cooking Time: 3 Minutes<br />
+								Cooking Temperature: Toaster<br />
+								Recipe Ingredients: Pop Tarts<br />
+								Cooking Directions: Drizzle with icing
+								</P>
+							</li>
+
+						</ul>
+					</div>
+					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Lunch</h3>
+						<ul data-role="listview">
+							<li>
+								<img src="images/Lunch.png" />
+								<p>Frist Name: Greg<br />
+								Last Name: Michael<br />
+								Date Added: 10/20/12<br />
+								Related: Yes<br />
+								Email: greg@greg.com<br />
+								Recipe Name: Cookie<br />
+								Type of Recipe: Lunch<br />
+								Difficulty: 2<br />
+								When You Cook This: Birthdays<br />
+								Other Time: <br />
+								Cooking Time: 1 Hour<br />
+								Cooking Temperature: 425 Degrees<br />
+								Recipe Ingredients: Cookie Mix<br />
+								Cooking Directions: Cook in oven then cool
+								</P>
+							</li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Dinner</h3>
+						<ul data-role="listview">
+							<li>
+								<img src="images/Dinner.png" />
+								<p>Frist Name: Jordan<br />
+								Last Name: Roy<br />
+								Date Added: 03/12/13<br />
+								Related: No<br />
+								Email: jordan@roy.com<br />
+								Recipe Name: Shrimp<br />
+								Type of Recipe: Dinner<br />
+								Difficulty: 3<br />
+								When You Cook This: Birthdays<br />
+								Other Time: <br />
+								Cooking Time: 1 Hour<br />
+								Cooking Temperature: 415 Degrees<br />
+								Recipe Ingredients: Shrimp<br />
+								Cooking Directions: peel and eat
+								</P>
+							</li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Appetizer</h3>
+						<ul data-role="listview">
+							<li>
+								<img src="images/Appetizer.png" />
+								<p>Frist Name: Jeanine<br />
+								Last Name: Esposito<br />
+								Date Added: 11/12/12<br />
+								Related: Yes<br />
+								Email: jeanine@jeanine.com<br />
+								Recipe Name: Biscuits<br />
+								Type of Recipe: Appetizer<br />
+								Difficulty: 2<br />
+								When You Cook This: Birthdays<br />
+								Other Time: BBQ<br />
+								Cooking Time: 1 Hour<br />
+								Cooking Temperature: 423 Degrees<br />
+								Recipe Ingredients: Biscuits, Hot Dogs<br />
+								Cooking Directions: Wrap and cook
+								</P>
+							</li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Dessert</h3>
+						<ul data-role="listview">
+							<li>
+								<img src="images/Dessert.png" />
+								<p>Frist Name: Sandy<br />
+								Last Name: Rice<br />
+								Date Added: 09/04/12<br />
+								Related: Yes<br />
+								Email: sandy@sandy.com<br />
+								Recipe Name: Brownie<br />
+								Type of Recipe: Dessert<br />
+								Difficulty: 7<br />
+								When You Cook This: Birthdays<br />
+								Other Time: <br />
+								Cooking Time: 1 Hour<br />
+								Cooking Temperature: 425 Degrees<br />
+								Recipe Ingredients: Brownie Mix<br />
+								Cooking Directions: Cook in oven then cool
+								</P>
+							</li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+						<h3>Drink</h3>
+						<ul data-role="listview">
+							<li>
+								<img src="images/Drink.png" />
+								<p>Frist Name: Louis<br />
+								Last Name: Rasta<br />
+								Date Added: 12/14/11<br />
+								Related: No<br />
+								Email: louis@louis.com<br />
+								Recipe Name: MMMMMM<br />
+								Type of Recipe: Drink<br />
+								Difficulty: 1<br />
+								When You Cook This: New Years<br />
+								Other Time: <br />
+								Cooking Time: 5 minutes<br />
+								Cooking Temperature: <br />
+								Recipe Ingredients: Champagne, OJ<br />
+								Cooking Directions: Mix and serve
+								</P>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End News Stream -->
+
+		<!-- Search Page -->
+		<div data-role="page" id="searchRecipePage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Search Results</h1>
+			</div>
+			<div data-role="content" id="searchContent">
+				<h3 id="searchHead">Here are your search results</h3>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Search Page -->
+
+		<!-- Breakfast Page -->
+		<div data-role="page" id="breakfastpage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Breakfast Recipes</h1>
+			</div>
+			<div data-role="content" id="breakfastContent">
+				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Breakfast Page -->
+
+		<!-- Lunch Page -->
+		<div data-role="page" id="lunchpage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Lunch Recipes</h1>
+			</div>
+			<div data-role="content" id="lunchContent">
+				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>			
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Lunch Page -->
+		
+		<!-- Dinner Page -->
+		<div data-role="page" id="dinnerpage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Dinner Recipes</h1>
+			</div>
+			<div data-role="content" id="dinnerContent">
+				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Dinner Page -->
+		
+		<!-- Appetizer Page -->
+		<div data-role="page" id="appetizerpage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Appetizer Recipes</h1>
+			</div>
+			<div data-role="content" id="appetizerContent">
+				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Appetizer Page -->
+		
+		<!-- Dessert Page -->
+		<div data-role="page" id="dessertpage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Dessert Recipes</h1>
+			</div>
+			<div data-role="content" id="dessertContent">
+				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Dessert Page -->
+		
+		<!-- Drink Page -->
+		<div data-role="page" id="drinkpage" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Drink Recipes</h1>
+			</div>
+			<div data-role="content" id="drinkContent">
+				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
+			</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- End Drink Page -->
+		
+		<!-- Add Item Page -->
+		<div data-role="page" id="addItem" data-add-back-btn="true">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Add A Recipe</h1>
+			</div>
+			
+			<div data-role="content" id="formContent">
+				<form action="" id="addForm">
+					<fieldset id="contactFieldset">
+						<legend id="infoLegend">Your Information</legend>
+						<span id="required">*Fields are required.</span>
+						<ul id="errors"></ul>
+							
+							<div data-role="fieldcontain">
+								<label for="fname">*First Name:</label>
+								<input type="text" data-clear-btn="true" name="fname" id="fname" placeholder="John" data-mini="true"  />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="lname">*Last Name:</label>
+								<input type="text" data-clear-btn="true" name="lname" id="lname" placeholder="Doe" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="todaysDate"> Todays Date:</label>
+								<input type="date" data-clear-btn="true" name="todaysDate" id="todaysDate" placeholder="MM/DD/YYY" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup" data-type="vertical">
+									<legend>Are you part of the family?</legend>
+										<input type="radio" value="Yes" id="yes" name="relative" checked="checked" data-mini="true" />
+										<label for="yes">Yes</label>
+										<input type="radio" value="No" id="no" name="relative" data-mini="true" />
+										<label for="no">No</label>
+								</fieldset>
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="email">*Email:</label>
+								<input type="email" data-clear-btn="true" id="email" name="email" placeholder="example@email.com" data-mini="true" />
+								<span id="emailinput">Enter a valid Email: "example@email.com"</span>
+							</div>
+					</fieldset>
+					<fieldset id="recipeFieldset">
+						<legend id="recLegend">Your Recipe Information</legend>
+						
+							<div data-role="fieldcontain">
+								<label for="recName">*Recipe Name</label>
+								<input type="text" data-clear-btn="true" name="recName" id="recName" placeholder="What do you call this recipe?" data-mini="true"  />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="type">What type of recipe will this be?</label>
+								<select name="type" id="type" data-mini="true" data-native-menu="false"  >
+									<option value="choose"> --Choose A Type Of Recipe-- </option>
+									<option value="Breakfast">Breakfast</option>
+									<option value="Luch">Lunch</option>
+									<option value="Dinner">Dinner</option>
+									<option value="Appetizer">Appetizer</option>
+									<option value="Dessert">Dessert</option>
+									<option value="Drink">Drink</option>
+								</select>
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="range">Select the level of difficulty:</label>
+								<input type="range" name="range" id="range" value="5" min="1" max="10" data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<fieldset data-role="controlgroup" data-type="vertical">
+									<legend>When do you make this?<br/>
+									<span id="whenSmall">(Check all that apply)</span></legend>
+										<input type="checkbox" value="Valentines" id="valentines" name="when" data-mini="true" />
+										<label for="valentines">Valentines</label>
+										<input type="checkbox" value="Easter" id="easter" name="when" data-mini="true" />
+										<label for="easter">Easter</label>
+										<input type="checkbox" value="Halloween" id="halloween" name="when" data-mini="true" />
+										<label for="halloween">Halloween</label>
+										<input type="checkbox" value="Thanksgiving" id="thanksgiving" name="when" data-mini="true" />
+										<label for="thanksgiving">Thanksgiving</label>
+										<input type="checkbox" value="Christmas" id="christmas" name="when" data-mini="true" />
+										<label for="christmas">Christmas</label>
+										<input type="checkbox" value="Birthdays" id="birthdays" name="when" data-mini="true" />
+										<label for="birthdays">Birthdays</label>
+										<input type="checkbox" value="Other" id="other" name="when" data-mini="true" />
+										<label for="other">Other Times - Please Specify:</label>
+										<input type="text" id="specify" placeholder="Specify when you cook this" data-mini="true" /> 
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="time">Cooking Time:</label>
+								<input type="text" data-clear-btn="true" name="time" id="time" placeholder="1 Hour or 15 Minutes etc..." data-mini="true" />
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="temperature">Cooking Temperature:</label>
+								<input type="text" data-clear-btn="true" name="temperature" id="temperature" placeholder="350 degrees or Microwave etc..." data-mini="true" />
+							</dvi>
+							
+							<div data-role="fieldcontain">
+								<label for="ingredients">*Ingredients:</label>
+								<textarea name="ingredients" data-clear-btn="true" id="ingredients" placeholder="List all your ingredients" data-mini="true" ></textarea>
+								<span id="inginput">List of all the ingredients required for your recipe.<span>
+							</div>
+							
+							<div data-role="fieldcontain">
+								<label for="directions">*Cooking Directions:</label>
+								<textarea name="directions" data-clear-btn="true" id="directions" placeholder="Step by step cooking instructions." data-mini="true" ></textarea>
+								<span id="dirinput">Step by step cooking instructions so that others can be sure how to cook this recipe.<span>
+							</div>
+					</fieldset>
+					
+					<div data-role="fieldcontain">
+						<input type="submit" value="Submit Your Recipe!" id="saveRecipe" data-theme="b" /><br/>
+						<input type="reset" value="Clear the Form" id="clearForm" data-mini="true" />
+					</div>
+					
+					<a href="#errors" id="errorsLink" data-rel="dialaog" data-transition="pop">Errors</a>
+					
+				</form>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#dispRec" id="display" data-icon="bars" data-theme="b">Display Recipes</a></li>
+						<li><a href="#" id="clear" data-icon="delete" data-theme="b">Clear Recipes</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div><!-- End Add Item Page -->
+		
+		<!-- Display All Recipes Page -->
+		<div data-role="page" id="dispRec" data-add-back-btn="true">
+			
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>All Recipes</h1>
+			</div>
+			
+			<div data-role="content" >
+				<ul id="dispRecCont" data-role="list-view" data-filter="true" data-filter-placeholder="Search recipes..." >
+				</ul>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div><!-- End Display Page -->
+		
+		<!-- Error Dialog Page -->
+		<div data-role="dialog" id="errorsDialog">
+			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+				<h1>Missing Fields</h1>
+			</div>
+			
+			<div data-role="content">
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+		</div><!-- End Dialog Page -->
+		
+		<!-- JS -->
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<script src="js/libs/jquery.validate.min.js"></script>
+		<script src="js/json.js" type="text/javascript"></script>
+		<script src="js/sample-main.js" type="text/javascript"></script>
+	</body>
+</html>
