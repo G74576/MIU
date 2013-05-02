@@ -20,48 +20,35 @@
 		<title>Our Family Recipe Book</title>
 		<!-- StyleSheets -->
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-		<link href="css/index.css" rel="stylesheet" type="text/css" />	
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<link href="css/themes/custom7.css" rel="stylesheet" type="text/css" />	
 		<!-- JS is normally at the end of the body, except for Modenizer which enables HTML elements and feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
 		<!-- Home Page -->
 		<div data-role="page" id="homepage">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<header>
-					<h1 id="logo"><a href="index.html"><img alt="Logo" src="images/logo.png" /></a></h1>
+			<div data-role="header" data-postition="fixed" data-id="homepage" id="header" data-theme="a" >
+				<header id="hp">
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Home</h1>
 				</header>
 			</div>
 			
 			<div data-role="content" id="cta">
-				<a href="#addItem" data-role="button" data-mini="true" data-inline="true" data-theme="b" id="addbtn">Add A Recipe</a>
+				<a href="#addItem" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="addbtn">Add A Recipe</a>
 			</div>
 			
 			<div data-role="content" id="searchpage">
 				<ul data-role="listview">
 					<label for="searchTerm">Search recipes by...</label>
 					<input type="search" id="searchTerm" data-mini="true" value="" placeholder="Search recipes by..."/>
-					<h3><a href="#searchRecipePage" data-role="button" data-mini="true" data-theme="b" id="searchbtn">Search</a></h3>
+					<h3><a href="#searchRecipePage" data-role="button" data-mini="true" data-theme="a" id="searchbtn">Search</a></h3>
 				</ul>
 			</div>
 			
 			<div id="browse">
-				<ul data-role="listview">
-					<li data-role="list-divider">Or browse recipes by category:</li>
-						<!--<div id="searchpage">
-							<form>
-								<span id="selectType"><label for="browsecat">Or browse by category:</label></span>
-								<select name="browsecategory" id="types" data-mini="true">
-									<option value="choose"> --Choose A Type Of Recipe-- </option>
-									<option value="break">Breakfast</option>
-									<option value="lun">Lunch</option>
-									<option value="din">Dinner</option>
-									<option value="app">Appetizer</option>
-									<option value="des">Dessert</option>
-									<option value="dri">Drink</option>
-								</select>
-							</form>
-						</div>-->
+				<ul data-role="listview" >
+					<li data-role="list-divider" data-theme="a">Or browse recipes by category:</li>
 					<li><a href="#breakfastpage">Breakfast</a></li>
 					<li><a href="#lunchpage">Lunch</a></li>
 					<li><a href="#dinnerpage">Dinner</a></li>
@@ -74,10 +61,10 @@
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
@@ -85,60 +72,72 @@
 		</div><!-- End Home Page -->
 		
 		<!-- Recipes Page (navbar) -->
-		<div data-role="page" id="recipesPage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b">
-				<h1>Browse Recipes</h1>
+		<div data-role="page" id="recipesPage">
+			<div data-role="header" data-postition="fixed" data-theme="a">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Browse Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content">
 				<h3 id="recipehead">Browse through our delicious<br />family recipes by category</h3>
 				<div class="ui-grid-b" id="recCont">
-					<a href="#breakfastpage"><div class="ui-block-a"><div class="ui-bar ui-bar-c"><img src="images/Breakfast.png" /><br />Breakfast</div></div></a>
-					<a href="#lunchpage"><div class="ui-block-b"><div class="ui-bar ui-bar-c"><img src="images/Lunch.png" /><br />Lunch</div></div></a>
-					<a href="#dinnerpage"><div class="ui-block-c"><div class="ui-bar ui-bar-c"><img src="images/Dinner.png" /><br />Dinner</div></div></a>
-					<a href="#appetizerpage"><div class="ui-block-a"><div class="ui-bar ui-bar-c"><img src="images/Appetizer.png" /><br />Appetizer</div></div></a>
-					<a href="#dessertpage"><div class="ui-block-b"><div class="ui-bar ui-bar-c"><img src="images/Dessert.png" /><br />Dessert</div></div></a>
-					<a href="#drinkpage"><div class="ui-block-c"><div class="ui-bar ui-bar-c"><img src="images/Drink.png" /><br />Drink</div></div></a>
+					<a href="#breakfastpage"><div class="ui-block-a"><div class="ui-bar ui-bar-a"><img src="images/Breakfast.png" /><br />Breakfast</div></div></a>
+					<a href="#lunchpage"><div class="ui-block-b"><div class="ui-bar ui-bar-a"><img src="images/Lunch.png" /><br />Lunch</div></div></a>
+					<a href="#dinnerpage"><div class="ui-block-c"><div class="ui-bar ui-bar-a"><img src="images/Dinner.png" /><br />Dinner</div></div></a>
+					<a href="#appetizerpage"><div class="ui-block-a"><div class="ui-bar ui-bar-a"><img src="images/Appetizer.png" /><br />Appetizer</div></div></a>
+					<a href="#dessertpage"><div class="ui-block-b"><div class="ui-bar ui-bar-a"><img src="images/Dessert.png" /><br />Dessert</div></div></a>
+					<a href="#drinkpage"><div class="ui-block-c"><div class="ui-bar ui-bar-a"><img src="images/Drink.png" /><br />Drink</div></div></a>
 				</div>
+			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
 			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="a"  class="ui-btn-active">Add Recipe</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Recipes Page -->
 				
 		<!-- Info Page -->
-		<div data-role="page" id="infopage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b">
-				<h1>Site Information</h1>
+		<div data-role="page" id="infopage">
+			<div data-role="header" data-postition="fixed" id="header" data-theme="a">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Site Information</h1>
+				</header>
 			</div>
 			<div data-role="content">
 				<h3 id="infoHead">For information about the author of this site or any other information please visit one of the links below</h3>
-				<a href="#author" data-role="button">Author Info</a>
-				<a href="../bronze/index.html" data-ajax="false" data-role="button">Brozne Page</a>
-				<a href="https://github.com/G74576/MIU" target="_blank" data-ajax="false" data-role="button">GitHub Repository</a>
+				<a href="#author" data-role="button" data-theme="a">Author Info</a>
+				<a href="../bronze/index.html" data-ajax="false" data-role="button" data-theme="a">Brozne Page</a>
+				<a href="https://github.com/G74576/MIU" target="_blank" data-ajax="false" data-role="button" data-theme="a">GitHub Repository</a>
+			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
 			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a"  class="ui-btn-active">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Info Page -->
 		
 		<!-- Author Page -->
-		<div data-role="page" id="author" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b">
-					<h1>About The Author</h1>
+		<div data-role="page" id="author">
+			<div data-role="header" data-postition="fixed" data-theme="a">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>About the Author</h1>
+				</header>
 			</div>
 			<div data-role="content">
 					<h2 id="authHead">Kevin O'Toole</h2>
@@ -152,27 +151,32 @@
 						<a href="mailto:kmotoole78@gmail.com" id="gmail">kmotoole78@gmail.com</a>
 					</p>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a"  class="ui-btn-active">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- Ende Author Page -->
 			
 		<!-- News Stream -->
-		<div data-role="page" id="newsStream" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>News Stream</h1>
+		<div data-role="page" id="newsStream">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>News Stream</h1>
+				</header>
 			</div>
 			<div data-role="content">
 				<h3 id="newshead">View the most current recipe<br />added by category!</h3>
 				<div data-role="collapsible-set">
-					<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div data-role="collapsible" data-collapsed="true" data-theme="a" data-content-theme="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h3>Breakfast</h3>
 						<ul data-role="listview">
 							<li>
@@ -214,7 +218,7 @@
 
 						</ul>
 					</div>
-					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div data-role="collapsible" data-theme="a" data-content-theme="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h3>Lunch</h3>
 						<ul data-role="listview">
 							<li>
@@ -237,7 +241,7 @@
 							</li>
 						</ul>
 					</div>
-					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div data-role="collapsible" data-theme="a" data-content-theme="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h3>Dinner</h3>
 						<ul data-role="listview">
 							<li>
@@ -260,7 +264,7 @@
 							</li>
 						</ul>
 					</div>
-					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div data-role="collapsible" data-theme="a" data-content-theme="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h3>Appetizer</h3>
 						<ul data-role="listview">
 							<li>
@@ -283,7 +287,7 @@
 							</li>
 						</ul>
 					</div>
-					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div data-role="collapsible" data-theme="a" data-content-theme="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h3>Dessert</h3>
 						<ul data-role="listview">
 							<li>
@@ -306,7 +310,7 @@
 							</li>
 						</ul>
 					</div>
-					<div data-role="collapsible" data-theme="b" data-content-them="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
+					<div data-role="collapsible" data-theme="a" data-content-theme="d" data-inset="false"data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u">
 						<h3>Drink</h3>
 						<ul data-role="listview">
 							<li>
@@ -331,162 +335,202 @@
 					</div>
 				</div>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a"  class="ui-btn-active">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End News Stream -->
 
 		<!-- Search Page -->
-		<div data-role="page" id="searchRecipePage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Search Results</h1>
+		<div data-role="page" id="searchRecipePage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Search Results</h1>
+				</header>
 			</div>
 			<div data-role="content" id="searchContent">
 				<h3 id="searchHead">Here are your search results</h3>
 			</div>
+			<div>
+					<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="a">Add Recipe</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Search Page -->
 
 		<!-- Breakfast Page -->
-		<div data-role="page" id="breakfastpage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Breakfast Recipes</h1>
+		<div data-role="page" id="breakfastpage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Breakfast Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content" id="breakfastContent">
 				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Breakfast Page -->
 
 		<!-- Lunch Page -->
-		<div data-role="page" id="lunchpage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Lunch Recipes</h1>
+		<div data-role="page" id="lunchpage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Lunch Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content" id="lunchContent">
 				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>			
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Lunch Page -->
 		
 		<!-- Dinner Page -->
-		<div data-role="page" id="dinnerpage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Dinner Recipes</h1>
+		<div data-role="page" id="dinnerpage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Dinner Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content" id="dinnerContent">
 				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Dinner Page -->
 		
 		<!-- Appetizer Page -->
-		<div data-role="page" id="appetizerpage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Appetizer Recipes</h1>
+		<div data-role="page" id="appetizerpage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Appetizer Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content" id="appetizerContent">
 				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Appetizer Page -->
 		
 		<!-- Dessert Page -->
-		<div data-role="page" id="dessertpage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Dessert Recipes</h1>
+		<div data-role="page" id="dessertpage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Dessert Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content" id="dessertContent">
 				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Dessert Page -->
 		
 		<!-- Drink Page -->
-		<div data-role="page" id="drinkpage" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Drink Recipes</h1>
+		<div data-role="page" id="drinkpage" >
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Drink Recipes</h1>
+				</header>
 			</div>
 			<div data-role="content" id="drinkContent">
 				<h4><img src="images/error.png" alt="error indicator" id="error" />This feature is currently unavailable but will be up soon. Please come back and check soon!</h4>
 			</div>
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
-						<li><a href="#infopage" data-icon="info" data-theme="b">Info</a></li>
-						<li><a href="#newsStream" data-icon="bars" data-theme="b">News</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
+						<li><a href="#infopage" data-icon="info" data-theme="a">Info</a></li>
+						<li><a href="#newsStream" data-icon="bars" data-theme="a">News</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- End Drink Page -->
 		
 		<!-- Add Item Page -->
-		<div data-role="page" id="addItem" data-add-back-btn="true">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>Add A Recipe</h1>
+		<div data-role="page" id="addItem">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>Add A Recipes</h1>
+				</header>
 			</div>
 			
 			<div data-role="content" id="formContent">
@@ -598,7 +642,7 @@
 					</fieldset>
 					
 					<div data-role="fieldcontain">
-						<input type="submit" value="Submit Your Recipe!" id="saveRecipe" data-theme="b" /><br/>
+						<input type="submit" value="Submit Your Recipe!" id="saveRecipe" data-theme="a" /><br/>
 						<input type="reset" value="Clear the Form" id="clearForm" data-mini="true" />
 					</div>
 					
@@ -610,9 +654,9 @@
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#dispRec" id="display" data-icon="bars" data-theme="b">Display Recipes</a></li>
-						<li><a href="#" id="clear" data-icon="delete" data-theme="b">Clear Recipes</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#dispRec" id="display" data-icon="bars" data-theme="a">Display Recipes</a></li>
+						<li><a href="#" id="clear" data-icon="delete" data-theme="a">Clear Recipes</a></li>
 					</ul>
 				</div>
 			</div>
@@ -620,23 +664,28 @@
 		</div><!-- End Add Item Page -->
 		
 		<!-- Display All Recipes Page -->
-		<div data-role="page" id="dispRec" data-add-back-btn="true">
+		<div data-role="page" id="dispRec">
 			
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
-				<h1>All Recipes</h1>
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
+				<header>
+					<h1><a href="#homepage"><img src="images/logo_brand2.png" /></a>All Recipes</h1>
+				</header>
 			</div>
 			
 			<div data-role="content" >
 				<ul id="dispRecCont" data-role="list-view" data-filter="true" data-filter-placeholder="Search recipes..." >
 				</ul>
 			</div>
-			
+			<div>
+				<a href="#recipesPage" data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="a" id="back">Back</a>
+			</div>
+
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#addItem" data-icon="plus" data-theme="b">Add Recipe</a></li>
-						<li><a href="#recipesPage" data-icon="search" data-theme="b">Recipes</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#addItem" data-icon="plus" data-theme="a">Add Recipe</a></li>
+						<li><a href="#recipesPage" data-icon="search" data-theme="a">Recipes</a></li>
 					</ul>
 				</div>
 			</div>
@@ -645,7 +694,7 @@
 		
 		<!-- Error Dialog Page -->
 		<div data-role="dialog" id="errorsDialog">
-			<div data-role="header" data-postition="fixed" data-theme="b" data-id="homepage">
+			<div data-role="header" data-postition="fixed" data-theme="a" data-id="homepage">
 				<h1>Missing Fields</h1>
 			</div>
 			
